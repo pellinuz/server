@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Avvia Server</title>
+</head>
+
+<body>
+	<button id="avviaServer">Avvia Server</button>
+
+	<script>
+		document.getElementById('avviaServer').addEventListener('click', () => {
+			fetch('/avvia-server')
+				.then(response => response.text())
+				.then(message => {
+					alert(message);
+				})
+				.catch(error => {
+					console.error('Errore durante l\'avvio del server:', error);
+				});
+		});
+	</script>
+</body>
+
+</html>
